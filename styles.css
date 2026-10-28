@@ -43,6 +43,7 @@ ul { padding: 0; list-style: none; }
 button { font: inherit; color: inherit; }
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 ::selection { background: var(--ink); color: #fff; }
+[hidden] { display: none !important; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .skip { position: absolute; left: var(--m); top: -60px; z-index: 50; background: var(--ink); color: #fff; padding: 10px 16px; }
 .skip:focus { top: 10px; }

@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=zodiak@100,300,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=6">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -87,10 +87,13 @@
 <section class="hero" id="top" data-chapter="light">
   <div class="hero-field hero-paper"></div>
   <div class="hero-field hero-navy"></div>
-  <img class="hero-photo" src="assets/img/lucas-espinoza-sala-jockey-club-campo-azul.jpg" width="1440" height="810" alt="Lucas Espinoza con la careta y el arma en la sala de esgrima">
+  <video class="hero-photo" autoplay muted loop playsinline preload="auto" poster="assets/video/entrenamiento-esgrima-naval.jpg" aria-label="Entrenamiento en la sala de Esgrima Naval: tiradores en guardia y Lucas con la pelota de reacción">
+    <source src="assets/video/entrenamiento-esgrima-naval.mp4" type="video/mp4">
+  </video>
   <div class="hero-title-wrap">
-    <h1 class="hero-title"><span class="l1">Maestro <span class="slot"><img src="assets/img/asalto-esgrima-naval-olivos.jpg" width="720" height="360" alt="Dos tiradores en asalto en la sala de Esgrima Naval, Olivos"></span></span><span class="l2">de armas</span></h1>
+    <h1 class="hero-title"><span class="l1">Maestro <span class="slot"><video autoplay muted loop playsinline poster="assets/video/clase-de-a-dos-jockey-club.jpg" aria-label="Clase de a dos: Lucas frente a dos alumnos en la pista"><source src="assets/video/clase-de-a-dos-jockey-club.mp4" type="video/mp4"></video></span></span><span class="l2">de armas</span></h1>
   </div>
+  <button class="video-toggle" type="button" aria-pressed="false" data-video-toggle>Pausar video</button>
   <p class="hero-sub">Lucas Espinoza enseña florete, espada y sable en el Jockey Club Argentino, San Isidro, y en Esgrima Naval, Olivos.</p>
 </section>
 
@@ -374,6 +377,6 @@
 
 <a class="sticky-cta btn btn-accent" href="https://ig.me/m/esp.fencingcoach" target="_blank" rel="noopener">Pedí una clase de prueba</a>
 
-<script src="script.js?v=3" defer></script>
+<script src="script.js?v=4" defer></script>
 </body>
 </html>

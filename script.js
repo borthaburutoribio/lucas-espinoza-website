@@ -180,6 +180,24 @@
     else names.forEach((n) => n.classList.add('lit'));
   }
 
+  /* ---- Videos del inicio: botón de pausa y sin gastar datos fuera de pantalla ---- */
+  const vids = [...document.querySelectorAll('.hero video')];
+  const vt = document.querySelector('[data-video-toggle]');
+  let userPaused = false;
+  const playAll = () => vids.forEach((v) => { const p = v.play(); if (p) p.catch(() => {}); });
+  if (vt) vt.addEventListener('click', () => {
+    userPaused = !userPaused;
+    if (userPaused) vids.forEach((v) => v.pause()); else playAll();
+    vt.textContent = userPaused ? 'Reproducir video' : 'Pausar video';
+    vt.setAttribute('aria-pressed', userPaused);
+  });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([e]) => {
+      if (userPaused) return;
+      if (e.isIntersecting) playAll(); else vids.forEach((v) => v.pause());
+    }).observe(hero);
+  }
+
   /* ---- Compartir ---- */
   const share = document.querySelector('[data-share]');
   if (share) share.addEventListener('click', async () => {

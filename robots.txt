@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /alumnos/data/
+Disallow: /_build/
+
+Sitemap: https://borthaburutoribio.github.io/lucas-espinoza-website/sitemap.xml

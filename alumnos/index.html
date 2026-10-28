@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Área de alumnos · Lucas Espinoza, Maestro de Armas</title>
+<meta name="description" content="Ingreso para alumnos de esgrima de Lucas Espinoza: rutina de la semana, objetivos, notas del maestro y cronómetro de asaltos.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0b1430">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=zodiak@100,300,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css?v=1">
+<link rel="stylesheet" href="alumnos.css?v=1">
+</head>
+<body class="portal-page">
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="p-bar">
+  <a class="wordmark" href="../">Lucas Espinoza</a>
+  <button class="p-out" type="button" data-logout hidden>Salir</button>
+</header>
+
+<main id="contenido">
+
+  <!-- INGRESO -->
+  <section class="login" data-view="login">
+    <div class="login-art" aria-hidden="true">
+      <img src="../assets/img/estocada-a-fondo.jpg" width="490" height="576" alt="">
+    </div>
+    <div class="login-box">
+      <h1>Área de alumnos</h1>
+      <p class="login-sub">Entrá con el usuario y la clave que te dio Lucas.</p>
+      <form class="login-form" novalidate>
+        <label for="u">Usuario</label>
+        <input id="u" name="usuario" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+        <label for="c">Clave</label>
+        <div class="pass">
+          <input id="c" name="clave" type="password" autocomplete="current-password" required>
+          <button type="button" class="pass-toggle" aria-pressed="false" aria-label="Mostrar clave">Ver</button>
+        </div>
+        <p class="login-error" role="alert" hidden></p>
+        <button class="btn btn-accent login-go" type="submit">Entrar</button>
+      </form>
+      <p class="login-help">¿Te olvidaste la clave? <a href="https://ig.me/m/esp.fencingcoach" target="_blank" rel="noopener">Pedísela a Lucas</a>.</p>
+      <p class="login-demo"><button type="button" class="text-link" data-demo>Ver una ficha de ejemplo</button> para ver cómo es por dentro.</p>
+    </div>
+  </section>
+
+  <!-- PANEL -->
+  <section class="dash" data-view="dash" hidden>
+    <div class="dash-head">
+      <h1 data-hello>Hola</h1>
+      <p class="dash-meta" data-meta></p>
+      <p class="dash-sample" data-sample hidden>Esta es una ficha de ejemplo armada para mostrar el área de alumnos. Los ejercicios son reales de esgrima, el alumno no.</p>
+    </div>
+
+    <div class="dash-grid">
+      <div class="dash-main">
+        <h2 class="dash-h">Tu semana</h2>
+        <div class="days" role="tablist" aria-label="Días de entrenamiento" data-days></div>
+        <div class="day-progress"><span data-progress-text></span><span class="bar-track"><span class="bar-fill" data-progress></span></span></div>
+        <div class="day-body" role="tabpanel" data-day></div>
+      </div>
+
+      <aside class="dash-side">
+        <article class="card card-note">
+          <h2 class="dash-h">De Lucas</h2>
+          <blockquote data-message></blockquote>
+        </article>
+
+        <article class="card card-timer" aria-labelledby="t-h">
+          <h2 class="dash-h" id="t-h">Cronómetro</h2>
+          <div class="presets" role="radiogroup" aria-label="Tipo de cronómetro" data-presets></div>
+          <p class="clock" data-clock aria-live="off">3:00</p>
+          <p class="clock-phase" data-phase aria-live="polite">Asalto</p>
+          <div class="clock-ctl">
+            <button class="btn btn-accent" type="button" data-start>Empezar</button>
+            <button class="btn btn-ghost" type="button" data-reset>Reiniciar</button>
+          </div>
+        </article>
+
+        <article class="card card-meet" data-meet hidden>
+          <h2 class="dash-h">Próximo torneo</h2>
+          <p class="meet-days" data-meet-days></p>
+          <p data-meet-name></p>
+        </article>
+
+        <article class="card">
+          <h2 class="dash-h">Objetivos del mes</h2>
+          <ul class="goals" data-goals></ul>
+        </article>
+
+        <article class="card">
+          <h2 class="dash-h">Notas de las clases</h2>
+          <ul class="notes" data-notes></ul>
+        </article>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<script src="alumnos.js?v=1" defer></script>
+</body>
+</html>

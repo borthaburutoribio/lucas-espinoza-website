@@ -189,10 +189,11 @@
   }
   function resetTimer() { stopTimer(); left = preset.work; round = 1; resting = false; paintClock(); startBtn.textContent = 'Empezar'; }
   function stopTimer() {
-    if (tick) cancelAnimationFrame(tick); tick = null;
+    if (tick) clearInterval(tick); tick = null;
     if (wake) { wake.release().catch(() => {}); wake = null; }
   }
-  function loop(t) {
+  function loop() {
+    const t = performance.now();
     const dt = (t - last) / 1000; last = t;
     const before = Math.ceil(left);
     left -= dt;
@@ -206,14 +207,13 @@
       } else return finish();
     }
     paintClock();
-    tick = requestAnimationFrame(loop);
   }
   function finish() { left = 0; paintClock(); stopTimer(); beep(990, 0.5); startBtn.textContent = 'Otra vez'; startBtn.dataset.done = '1'; }
   startBtn.addEventListener('click', async () => {
     if (startBtn.dataset.done) { delete startBtn.dataset.done; resetTimer(); }
     if (tick) { stopTimer(); startBtn.textContent = 'Seguir'; return; }
     beep(990, 0.12);
-    last = performance.now(); tick = requestAnimationFrame(loop);
+    last = performance.now(); tick = setInterval(loop, 200);
     startBtn.textContent = 'Pausa';
     try { if ('wakeLock' in navigator) wake = await navigator.wakeLock.request('screen'); } catch (_) {}
   });
